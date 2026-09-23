@@ -1,0 +1,24 @@
+name: Test FFmpeg
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check FFmpeg
+        run: |
+          ffmpeg -version
+
+      - name: Check system
+        run: |
+          echo "CPU:"
+          nproc
+
+          echo "RAM:"
+          free -h
+
+          echo "Disk:"
+          df -h
